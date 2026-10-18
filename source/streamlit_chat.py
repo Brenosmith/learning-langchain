@@ -1,6 +1,7 @@
 import streamlit as st
 # from openai_model import model, messages, HumanMessage, AIMessage
-from huggingface_model import model, messages, HumanMessage, AIMessage
+# from huggingface_model import model, messages, HumanMessage, AIMessage
+from local_model import model, messages, HumanMessage, AIMessage
 
 
 def openai_chat(user_input, model, messages):
@@ -24,8 +25,8 @@ def openai_chat(user_input, model, messages):
             st.chat_message("assistant").write(message.content)
 
 def my_chat_app():
-    st.header("Chat com OpenAI", divider=True)
-    st.markdown("Converse com o chatGPT")
+    st.header("Chat com a AI", divider=True)
+    st.markdown("Converse com a AI")
     user_input = st.chat_input("Digite sua pergunta:")
     openai_chat(user_input, model, messages)
 

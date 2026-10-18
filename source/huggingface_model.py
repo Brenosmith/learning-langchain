@@ -7,10 +7,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 messages = [
-    SystemMessage("Responda as perguntas de forma curta e objetiva, em até 140 caracteres."),
+    SystemMessage("Responda somente com a resposta final, sem mostrar seu raciocínio "
+                  "ou as tags <think>. Seja curto e objetivo, em até 140 caracteres."),
     ]
 
-llm = HuggingFaceEndpoint(repo_id="deepseek-ai/DeepSeek-R1-Distill-Qwen-14B")
+llm = HuggingFaceEndpoint(repo_id="Qwen/Qwen2.5-3B-Instruct")
 
 model = ChatHuggingFace(llm=llm)
 
@@ -24,5 +25,10 @@ if __name__ == "__main__":
 
 
 # https://pytorch.org/
+# Com pensamento:
 # https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B
 # https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-14B
+# https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+# Direto:
+# https://huggingface.co/Qwen/Qwen2.5-3B-Instruct
+# https://huggingface.co/Qwen/Qwen2.5-7B-Instruct
